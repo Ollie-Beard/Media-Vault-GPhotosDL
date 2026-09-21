@@ -1,4 +1,3 @@
-```text
 # Media Vault GPhotosDL
 
 GPhotosDL is the Google Photos download service used by the Media Vault ecosystem.
