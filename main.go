@@ -362,6 +362,7 @@ func (g *Gphotos) startBrowser() error {
 	cleanupStaleBrowserLocks()
 
 	l := launcher.New().
+		Leakless(false).
 		Bin(browserPath).
 		Headless(!*show).
 		UserDataDir(browserConfig).
