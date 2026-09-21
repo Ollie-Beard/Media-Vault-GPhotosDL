@@ -127,8 +127,6 @@ Then run without =login for every subsequent use of the application:
 
 Once authenticated, the Chrome profile is reused by subsequent GPhotosDL launches.
 
-The authentication profile should not be committed to Git.
-
 ---
 
 # Docker
