@@ -113,11 +113,17 @@ C:\Program Files\Google\Chrome\Application\chrome.exe
 
 From the directory containing `gphotosdl.exe`:
 
+The first run can be used to log in to a Google account.
+
+```powershell
+.\gphotosdl.exe -show -debug -login
+```
+
+Then run without =login for every subsequent use of the application:
+
 ```powershell
 .\gphotosdl.exe -show -debug
 ```
-
-The first run can be used to authenticate Google Photos.
 
 Once authenticated, the Chrome profile is reused by subsequent GPhotosDL launches.
 
