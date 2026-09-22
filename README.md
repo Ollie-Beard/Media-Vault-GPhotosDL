@@ -507,43 +507,11 @@ Generated/local files such as the Windows executable, Docker image export and Ch
 
 ---
 
-# Files that should not be committed
-
-The following are local/build artefacts and should remain outside Git:
-
-```text
-gphotosdl.exe
-gphotosdl
-google-chrome.deb
-gphotosdl.tar
-dist/
-```
-
-The authenticated Chrome profile and runtime configuration must also never be committed.
-
 ---
 
 # Releases
 
-Source code belongs in this repository.
-
-Built binaries and Docker image exports should be distributed through GitHub Releases rather than committed directly to the repository.
-
-For example:
-
-```text
-GitHub repository
-│
-├── source
-├── Dockerfile
-├── README.md
-└── GitHub Release
-      ├── gphotosdl-windows-amd64.exe
-      ├── gphotosdl-docker.tar
-      └── checksums.txt
-```
-
-This keeps the Git repository small while still making ready-to-run builds available.
+Built binaries and Docker image exports can be found in the releases section of this repository.
 
 ---
 
@@ -669,12 +637,6 @@ Media Vault
 ```
 
 GPhotosDL is the download/backend component.
-
-The Jellyfin plugin handles Jellyfin integration and presentation.
-
-Apps2Samsung provides the customised Samsung/Tizen Jellyfin application environment.
-
-JavaScript Injector provides the custom Jellyfin web UI used by Media Vault.
 
 ---
 
