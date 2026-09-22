@@ -151,6 +151,8 @@ The application should bind to:
 0.0.0.0:8282
 ```
 
+(visit localhost:8282)
+
 when it needs to be accessed by Jellyfin or another device/container.
 
 ---
