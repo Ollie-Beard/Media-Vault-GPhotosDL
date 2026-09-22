@@ -119,7 +119,7 @@ The first run can be used to log in to a Google account.
 .\gphotosdl.exe -show -debug -login
 ```
 
-Then run without =login for every subsequent use of the application:
+Then run without -login for every subsequent use of the application:
 
 ```powershell
 .\gphotosdl.exe -show -debug
