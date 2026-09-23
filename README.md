@@ -8,6 +8,31 @@ This repository contains the customised GPhotosDL source used by Media Vault.
 
 ---
 
+## Contents
+
+- [What it does](#what-it-does)
+- [Features](#features)
+- [Why Google Chrome is used](#why-google-chrome-is-used)
+- [Installation](#installation)
+- [Docker environment variables](#docker-environment-variables)
+- [Persistent Google Photos authentication](#persistent-google-photosauthentication)
+- [HTTP API](#http-api)
+- [Media Vault integration](#media-vault-integration)
+- [Container-specific Chrome configuration](#container-specific-chrome-configuration)
+- [Chrome profile lock cleanup](#chrome-profile-lock-cleanup)
+- [Chrome download history](#chrome-download-history)
+- [Authentication URL handling](#authentication-URL-handling)
+- [Configuration and storage](#configuration-and-storage)
+- [Building from source](#building-from-source)
+- [Repository structure](#repository-structure)
+- [Releases](#releases)
+- [Troubleshooting](#troubleshooting)
+- [Security and privacy](#security-and-privacy)
+- [Relationship with the Media Vault projects](#relationship-with-the-Media-Vault-projects)
+- [Upstream](#Upstream)
+
+---
+
 ## What it does
 
 The Media Vault setup uses GPhotosDL as the bridge between Google Photos and Jellyfin:
@@ -94,10 +119,11 @@ The Docker image expects:
 The browser profile is stored separately from the application binary so that authentication can persist across container restarts.
 
 ---
+# Installation
 
-# Windows
+## Windows
 
-## Requirements
+### Requirements
 
 - Windows 10/11
 - Google Chrome installed
@@ -109,7 +135,7 @@ The application looks for Chrome at:
 C:\Program Files\Google\Chrome\Application\chrome.exe
 ```
 
-## Running
+### Running
 
 From the directory containing `gphotosdl.exe`:
 
@@ -129,9 +155,9 @@ Once authenticated, the Chrome profile is reused by subsequent GPhotosDL launche
 
 ---
 
-# Docker
+## Docker
 
-## Docker image
+### Docker image
 
 The repository contains a multi-stage Dockerfile.
 
@@ -157,7 +183,7 @@ when it needs to be accessed by Jellyfin or another device/container.
 
 ---
 
-## Building the Docker image
+### Building the Docker image
 
 The Dockerfile expects `google-chrome.deb` to be present in the build context.
 
@@ -171,7 +197,7 @@ The Chrome `.deb` is intentionally ignored by Git because of its size.
 
 ---
 
-## Exporting the image
+### Exporting the image
 
 For deployment to a Synology NAS or another Docker host without rebuilding the image there:
 
@@ -183,7 +209,7 @@ Copy the resulting `gphotosdl.tar` to the target Docker host.
 
 ---
 
-# Synology NAS deployment
+## Synology NAS deployment
 
 The current Media Vault deployment uses:
 
@@ -204,7 +230,7 @@ The media destination is:
 /volume1/video
 ```
 
-## Load the Docker image
+### Load the Docker image
 
 After copying the exported image to the NAS:
 
@@ -226,7 +252,7 @@ The current development image was built with Google Chrome:
 
 ---
 
-## Run the container
+### Run the container
 
 The current Media Vault container can be started with:
 
